@@ -15,7 +15,7 @@ namespace GatheringAlwaysOn
     public class GatheringAlwaysOn : Mod, ITogglableMod
     {
         internal static GatheringAlwaysOn instance;
-        public const string EnabledBool = "GatheringAlwaysOn.Enabled";
+        public const string EnabledBool = "GatheringlwaysOn.Enabled";
         public const BindingFlags flags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
 
         private static readonly List<ILHook> ModInteropHooks = new List<ILHook>();
@@ -54,6 +54,7 @@ namespace GatheringAlwaysOn
             Log($"Generated Hook List in {sw.Elapsed.TotalSeconds} seconds.");
 
             ModHooks.GetPlayerBoolHook += InterpretGatheringBool;
+            ModHooks.GetPlayerIntHook += InterpretGatheringInt;
         }
 
         private void HookMethod(string typeName, string methodName)
@@ -119,6 +120,14 @@ namespace GatheringAlwaysOn
             return orig || (name == EnabledBool);
         }
 
+        private int InterpretGatheringInt(string name, int orig)
+        {
+            // Log($"{name}, {orig}");
+            if (name == "charmCost_1")
+                return 0;
+            return orig;
+        }
+
         // Easiest to simply force the relevant methods to request our own bool for Gathering
         private void ModifyGatheringBool(ILContext il)
         {
@@ -147,6 +156,7 @@ namespace GatheringAlwaysOn
             ModInteropHooks.Clear();
 
             ModHooks.GetPlayerBoolHook -= InterpretGatheringBool;
+            ModHooks.GetPlayerIntHook -= InterpretGatheringInt;
         }
 
         public override string GetVersion()

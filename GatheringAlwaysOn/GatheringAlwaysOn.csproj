@@ -4,14 +4,14 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>GatheringAlwaysOn</RootNamespace>
     <AssemblyTitle>GatheringAlwaysOn</AssemblyTitle>
-    <AssemblyVersion>0.2.0</AssemblyVersion>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   
   <PropertyGroup>
-    <HollowKnightRefs>/home/jixingwu/scripts/c#/HollowKnight.GatheringAlwaysOn/dll</HollowKnightRefs>
+    <HollowKnightRefs>/home/jixingwu/.steam/steam/steamapps/common/Hollow Knight/hollow_knight_Data/Managed</HollowKnightRefs>
   </PropertyGroup>
   
   <!--Gitignored local build properties file to modify the HollowKnightRefs value without needing to change anything in the remote.-->
