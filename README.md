@@ -21,7 +21,7 @@
 - [ ] 进入新的小地图时，飞行的Geo不会被“优化”掉
 - [ ] 掉入水中和酸水中的Geo不会被“优化”掉
 
-以上来自“守钱dang”的强烈需求，欢迎大家给出代码上的思路和建议，联系方式：jixingwu@sjtu.edu.cn。
+以上来自“守钱dang”的强烈需求，欢迎大家给出代码上的思路和建议
 
 - [ ] Custom Charm: 可以Always on任何你想on的护符，代码已上传至[github](https://github.com/jixingwu/GatheringAlwaysOn.git)
 
